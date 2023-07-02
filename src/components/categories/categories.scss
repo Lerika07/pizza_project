@@ -1,0 +1,23 @@
+@import "../../style/variables.scss";
+
+.categories {
+    ul {
+        display: flex;
+        li {
+            background-color: $grey;
+            padding: 10px 50px;
+            margin: 10px;
+            border: 1px solid $orange;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            &:hover {
+                background-color: $orange;
+            }
+        }
+    }
+    .active {
+        background-color: $orange;
+        color: $dark;
+    }
+}
