@@ -9,12 +9,12 @@ function App() {
       <Header />
 
       <main className="content">
-        <div className="content-top">
-          <div className="container">
-            <Categories />
-            <Sort />
-          </div>
+        {/* <div className="content-top"> */}
+        <div className="container content-top">
+          <Categories />
+          <Sort />
         </div>
+        {/* </div> */}
         <Pizza />
       </main>
       <footer className="footer"></footer>

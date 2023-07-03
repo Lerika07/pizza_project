@@ -11,7 +11,7 @@ const Header = () => {
               <img src={logo} alt="logo" />
             </div>
           </a>
-          <a href="/">Головна</a>
+          <a className="header__main" href="/">Головна</a>
         </div>
         <div className="header__nav">
           <div>
