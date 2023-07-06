@@ -3,10 +3,11 @@
     button,
     p,
     a {
-        padding: 0 20px;
+        padding: 5px 20px;
         font-size: 18px;
         @media (max-width: 1200px) {
             font-size: 15px;
+            padding: 2px 10px;
         }
     }
 
@@ -22,8 +23,24 @@
         display: flex;
         align-items: center;
     }
+
     &__nav {
         display: flex;
+    }
+
+    &__menu {
+        display: flex;
+        &-item {
+            margin-left: 10px;
+        }
+
+        &-link {
+            padding: 5px 10px;
+            &:hover {
+                background-color: #ffce59;
+                border-radius: 20px;
+            }
+        }
     }
     &__main {
         @media (max-width: 770px) {
@@ -31,9 +48,14 @@
         }
     }
     &__cart {
-        display: flex;
-        p {
-            padding: 0 7px;
+        &-link span {
+            @media (max-width: 400px) {
+                display: none;
+            }
+        }
+        &:hover {
+            background-color: #ffce59;
+            border-radius: 20px;
         }
     }
 }

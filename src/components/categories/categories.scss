@@ -19,6 +19,11 @@
                 padding: 5px 20px;
                 margin: 3px;
             }
+
+            @media (max-width: 400px) {
+                padding: 2px 8px;
+                margin: 5px;
+            }
         }
     }
     .active {
