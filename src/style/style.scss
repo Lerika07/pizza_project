@@ -73,16 +73,14 @@ button {
     }
 }
 
-.app {
-    // width: 100%;
-    // height: 100%;
-    // margin: 0 auto;
-    // border-radius: 10px;
-    // max-width: 1400px;
-    // width: calc(100vw - 100px);
-    // height: 100%;
-    // background-color: #fff;
-    // margin: 0 auto;
-    // border-radius: 10px;
-    // max-width: 1400px;
+.pizzas {
+    // display: flex;
+    flex-wrap: wrap;
+    // align-items: center;
+
+    // padding: 10px;
+    @media (max-width: 770px) {
+        display: flex;
+        flex-direction: row;
+    }
 }
