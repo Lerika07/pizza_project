@@ -2,7 +2,7 @@ import "./pizza.scss";
 import "../../style/style.scss";
 import { useState } from "react";
 
-const Pizza = ({ title, prices, image, sizes, types }) => {
+const Pizza = ({ title, prices, imageUrl, sizes, types, category }) => {
   const [index, setIndex] = useState(0);
   const [typeIndex, setTypeIndex] = useState(0);
   const onActive = (i) => {
@@ -14,7 +14,7 @@ const Pizza = ({ title, prices, image, sizes, types }) => {
 
   return (
     <div className="pizza">
-      <img className="pizza__img" src={image} alt="pizza" />
+      <img className="pizza__img" src={imageUrl} alt="pizza" />
       <h2 className="pizza__title">{title}</h2>
       <div className="pizza__about">
         <div className="pizza__selector">

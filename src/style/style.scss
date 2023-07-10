@@ -74,11 +74,7 @@ button {
 }
 
 .pizzas {
-    // display: flex;
     flex-wrap: wrap;
-    // align-items: center;
-
-    // padding: 10px;
     @media (max-width: 770px) {
         display: flex;
         flex-direction: row;

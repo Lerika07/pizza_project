@@ -15,15 +15,8 @@ function App() {
           <Sort />
         </div>
         <div className="pizzas container">
-          {pizzas.map((obj, i) => (
-            <Pizza
-              key={i}
-              title={obj.title}
-              prices={obj.prices}
-              image={obj.imageUrl}
-              sizes={obj.sizes}
-              types={obj.types}
-            />
+          {pizzas.map((obj) => (
+            <Pizza key={obj.id} {...obj} />
           ))}
         </div>
       </main>

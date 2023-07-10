@@ -11,13 +11,13 @@ const Categories = () => {
   return (
     <div className="categories">
       <ul>
-        {categories.map((value, i) => (
+        {categories.map((category, i) => (
           <li
             key={i}
             onClick={() => onActive(i)}
             className={index === i ? "active" : ""}
           >
-            {value}
+            {category}
           </li>
         ))}
       </ul>
