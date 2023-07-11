@@ -1,8 +1,51 @@
 .sort {
-    font-weight: bold;
-    span {
-        font-weight: 400;
-        font-style: italic;
+    position: relative;
+    b {
         cursor: pointer;
+        transition: 0.7s;
+    }
+    &__label {
+        display: flex;
+        align-items: center;
+        span {
+            cursor: pointer;
+        }
+    }
+
+    &__popup {
+        position: absolute;
+        right: 0;
+        margin-top: 15px;
+        background: #ffff;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 150px;
+        transition: opacity 0.3s ease;
+
+        @media (max-width: 776px) {
+            position: inherit;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+
+        ul {
+            li {
+                padding: 12px 20px;
+                cursor: pointer;
+
+                &.active,
+                &:hover {
+                    background: #fffbe6;
+                    border-radius: 10px;
+                }
+
+                &.active {
+                    font-weight: bold;
+                }
+                @media (max-width: 776px) {
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }
