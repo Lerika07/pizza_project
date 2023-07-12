@@ -4,7 +4,7 @@ import Header from "../header/Header";
 import Pizza from "../pizza-block/Pizza";
 import Sort from "../sort/Sort";
 import axios from "axios";
-import { PulseLoader } from "react-spinners";
+import Skeleton from "../pizza-block/Skeleton";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -15,8 +15,14 @@ function App() {
   useEffect(() => {
     axios
       .get(_url)
-      .then((data) => setItems(data.data))
-      .finally(setIsLoading(false));
+      .then((response) => {
+        setItems(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -29,11 +35,9 @@ function App() {
           <Sort />
         </div>
         <div className="pizzas container">
-          {isLoading ? (
-            <PulseLoader className="loading" color="#36d7b7" />
-          ) : (
-            items.map((obj) => <Pizza key={obj.id} {...obj} />)
-          )}
+          {isLoading
+            ? [...new Array(6)].map((_, i) => <Skeleton key={i} />)
+            : items.map((obj) => <Pizza key={obj.id} {...obj} />)}
         </div>
       </main>
       <footer className="footer"></footer>
