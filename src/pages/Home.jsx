@@ -4,12 +4,18 @@ import Skeleton from "../components/pizza-block/Skeleton";
 import Pizza from "../components/pizza-block/Pizza";
 import Categories from "../components/categories/Categories";
 import Sort from "../components/sort/Sort";
+import ErrorMessage from "../components/error/error";
 
 export const Home = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const _url = "https://62e91da601787ec7121197b8.mockapi.io/items";
+
+  const pizzaView = isLoading
+    ? [...new Array(6)].map((_, i) => <Skeleton key={i} />)
+    : items.map((obj) => <Pizza key={obj.id} {...obj} />);
 
   useEffect(() => {
     axios
@@ -21,6 +27,7 @@ export const Home = () => {
       .catch((error) => {
         console.error(error);
         setIsLoading(false);
+        setIsError(true);
       });
   }, []);
 
@@ -31,9 +38,7 @@ export const Home = () => {
         <Sort />
       </div>
       <div className="pizzas container">
-        {isLoading
-          ? [...new Array(6)].map((_, i) => <Skeleton key={i} />)
-          : items.map((obj) => <Pizza key={obj.id} {...obj} />)}
+        {isError ? <ErrorMessage /> : pizzaView}
       </div>
     </>
   );
