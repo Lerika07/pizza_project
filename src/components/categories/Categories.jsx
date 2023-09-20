@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./categories.scss";
+
 const Categories = () => {
   const [index, setIndex] = useState(0);
   const categories = ["Всі", "М'ясні", "Вегетаріанські", "Гострі"];

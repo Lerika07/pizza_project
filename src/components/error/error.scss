@@ -1,17 +1,23 @@
-.error-block {
-    margin: 0 auto;
-    padding: 30px;
-}
+.error {
+    &__block {
+        margin: 0 auto;
+        padding: 30px;
+    }
 
-img {
-    display: block;
-    width: 250px;
-    height: 250px;
-}
+    &__img {
+        display: block;
+        width: 250px;
+        height: 250px;
+        margin: 20px auto;
+    }
 
-h1 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__back {
+        display: block;
+    }
 }
